@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: orange;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        padding: 20px;
+        max-width: 1000px;
+        width: 100%;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .tab-container {
+        display: flex;
+        flex-direction: column;
+        width: 250px;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .tab {
+        padding: 15px;
+        cursor: pointer;
+        text-align: center;
+        background-color: white;
+        color: darkslategray;
+        border: none;
+        font-size: 16px;
+        transition: background-color 0.3s ease;
+        border-bottom: 1px solid lightgray;
+        flex: 1;
+    }
+
+    .tab:hover {
+        background-color: coral;
+    }
+
+    .tab-container button:last-child {
+        border-bottom: none;
+    }
+
+    .tab-content {
+        display: none;
+        padding: 20px;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        margin-left: 20px;
+        max-width: 700px;
+    }
+
+    .tab-content.active {
+        display: block;
+    }
+
+    form {
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    form label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+
+    form input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid lightgray;
+        border-radius: 5px;
+    }
+
+    form button {
+        padding: 10px 20px;
+        background-color: coral;
+        color: white;
+        border: none;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+    form button:hover {
+        background-color: darkorange;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <div class="tab-container">
+        <button class="tab" onclick="openTab('addressTab')">Address</button>
+        <button class="tab" onclick="openTab('educationTab')">Education</button>
+        <button class="tab" onclick="openTab('familyTab')">Family Details</button>
+        <button class="tab" onclick="openTab('logoutTab')">Log Out</button>
+    </div>
+
+    <div class="content-container">
+        <div id="addressTab" class="tab-content">
+            <h2>Address Screen</h2>
+            <form action="SampleServlet" method="post">
+                <label>City:</label>
+                <input type="text" name="city" required>
+                <label>State:</label>
+                <input type="text" name="state" required>
+                <label>Country:</label>
+                <input type="text" name="country" required>
+                <button type="submit">Submit Address</button>
+            </form>
+        </div>
+
+        <div id="educationTab" class="tab-content">
+            <h2>Education</h2>
+            <form action="SampleServlet" method="post">
+                <label>Highest Qualification:</label>
+                <input type="text" name="qualification" required>
+                <label>Passout Year:</label>
+                <input type="text" name="passoutYear" required>
+                <label>Percentage:</label>
+                <input type="text" name="percentage" required>
+                <button type="submit">Submit Education</button>
+            </form>
+        </div>
+
+        <div id="familyTab" class="tab-content">
+            <h2>Family Details</h2>
+            <form action="SampleServlet" method="post">
+                <label>Father's Name:</label>
+                <input type="text" name="fatherName" required>
+                <label>Mother's Name:</label>
+                <input type="text" name="motherName" required>
+                <label>Number of Siblings:</label>
+                <input type="text" name="siblings" required>
+                <button type="submit">Submit Family Details</button>
+            </form>
+        </div>
+
+        <div id="logoutTab" class="tab-content">
+            <h2>Log Out</h2>
+            <form action="File.html" method="post">
+                <button type="submit">Log Out</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    function openTab(tabName) {
+        const tabs = document.querySelectorAll('.tab-content');
+        tabs.forEach(tab => tab.classList.remove('active'));
+        const selectedTab = document.getElementById(tabName);
+        selectedTab.classList.add('active');
+    }
+
+    // Open the Address tab by default
+    openTab('addressTab');
+</script>
+
+</body>
+</html>

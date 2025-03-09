@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Register Now</title>
+<style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: orange;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .Register-container {
+            background-color: white;
+            padding: 80px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 500px;
+            text-align: center;
+        }
+        h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+    button {
+            width: 100%;
+            padding: 10px;
+            background-color: orange;
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: darkorange;
+        }
+    </style>
+</head>
+<body>
+<div class="register-container">
+        <h2>Register Now</h2>
+        <form action="Registernow" method="get">
+            <input type="Text" name="FullName" placeholder="FullName" required>
+             <input type="Text" name="LastName" placeholder="LastName" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="Text" name="Gender" placeholder="Gender" required>
+            <input type="password" name=" Create new password" placeholder="Create new Password" required>
+            <input type="password" name="confirm new Password" placeholder="Confirm new Password" required>
+            <button type="submit">Sign Up</button>
+        </form>
+</body>
+</html>
